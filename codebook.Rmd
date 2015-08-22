@@ -73,10 +73,12 @@ The cleaning process is just summarize the observations into the average for eac
 
 
 ##Description of the variables in the step5ResultFile.txt file
-
+```{r}
+f <- read.table("step5Result.txt")
+```
 General description of the file including: 
 
-- Dimensions of the dataset  
+- Dimensions of the dataset:  `dim(f)`
 - Summary of the data  
 - Variables present in the dataset  
  
