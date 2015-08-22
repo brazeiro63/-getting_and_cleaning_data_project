@@ -1,11 +1,6 @@
----
-title: "Codebook"
-author: "Paulo Ricardo Brazeiro de Carvalho"
-date: "Aug,21 2015"
-output:
-  html_document:
-    keep_md: yes
----
+# Codebook
+Paulo Ricardo Brazeiro de Carvalho  
+Aug,21 2015  
 
 ## Project Description
 This project has the objective of asses the knowledge acquired along the Getting and Cleaning Data discipline of the Data Science, Specialization Course. Aim to apply the concepts learned in the discipline on how to get data, from various sources, cleaning it, arrange it in the best form given an objective of analysis. In this case, data collected from accelerometer and gyroscope embedded in the smartphone devices were used to calculate a series of variables representing movements made by a group of thirty subjects, while doing a set of regular daily activities. The result must give the average of the measurements for each subject at each activity.
@@ -73,57 +68,64 @@ The cleaning process is just summarize the observations into the average for eac
 
 
 ##Description of the variables in the step5ResultFile.txt file
-```{r,echo=FALSE}
-f <- read.table(file = "step5ResultFile.txt", header = TRUE)
-```
+
 General description of the file including: 
 
 - Dimensions of the dataset:
-  `r dim(f)`
+  11880, 4
   
 - Summary of the data  
-  `r summary(f)`
+  Min.   : 1.0  , 1st Qu.: 8.0  , Median :15.5  , Mean   :15.5  , 3rd Qu.:23.0  , Max.   :30.0  , NA, LAYING            :1980  , SITTING           :1980  , STANDING          :1980  , WALKING           :1980  , WALKING_DOWNSTAIRS:1980  , WALKING_UPSTAIRS  :1980  , NA, fBodyAcc_mean_X:  180  , fBodyAcc_mean_Y:  180  , fBodyAcc_mean_Z:  180  , fBodyAcc_std_X :  180  , fBodyAcc_std_Y :  180  , fBodyAcc_std_Z :  180  , (Other)        :10800  , Min.   :-0.99767  , 1st Qu.:-0.96205  , Median :-0.46989  , Mean   :-0.48436  , 3rd Qu.:-0.07836  , Max.   : 0.97451  , NA
   
 - Variables present in the dataset  
-  `r names(f)`
+  subject_id, activity_name, measure_domain, average_value
  
 (you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
 
-###`r names(f)[1]`
+###subject_id
 Identification of the subject.
 
 Some information on the variable including:  
  - Class of the variable:  
-  `r class(names(f)[1])`  
+  character  
  - Unique values/levels of the variable:  
-  `r as.vector(unique(f$subject_id))`  
-
-
-###`r names(f)[2]`
-List of activities performed by the subjects during the experiment.
-
-Some information on the variable including:  
- - Class of the variable:  
-  `r class(names(f)[2])`  
- - Unique values/levels of the variable:  
-  `r as.vector(unique(f$activity_name))`  
-
-###`r names(f)[3]`
-list of types of measurements made .
-
- - Class of the variable:  
-  `r class(names(f)[3])`  
- - Unique values/levels of the variable:  
-  `r as.vector(unique(f$measure_domain))`  
-
-###`r names(f)[4]`
-Averages of the measurtements made by subject, activity and measurement domain.
-
-Some information on the variable including:  
- - Class of the variable:  
-  `r class(names(f)[4])`  
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30  
  - Unit of measurement (if no unit of measurement list this as well)  
-  The measurements were normalized to values between -1 and 1.
+ - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+
+
+###activity_name
+Identification of the subject.
+
+Some information on the variable including:  
+ - Class of the variable:  
+  character  
+ - Unique values/levels of the variable:  
+  LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS  
+ - Unit of measurement (if no unit of measurement list this as well)  
+ - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+
+###measure_domain
+Identification of the subject.
+
+Some information on the variable including:  
+ - Class of the variable:  
+  character  
+ - Unique values/levels of the variable:  
+  tBodyAcc_mean_X, tBodyAcc_mean_Y, tBodyAcc_mean_Z, tGravityAcc_mean_X, tGravityAcc_mean_Y, tGravityAcc_mean_Z, tBodyAccJerk_mean_X, tBodyAccJerk_mean_Y, tBodyAccJerk_mean_Z, tBodyGyro_mean_X, tBodyGyro_mean_Y, tBodyGyro_mean_Z, tBodyGyroJerk_mean_X, tBodyGyroJerk_mean_Y, tBodyGyroJerk_mean_Z, tBodyAccMag_mean, tGravityAccMag_mean, tBodyAccJerkMag_mean, tBodyGyroMag_mean, tBodyGyroJerkMag_mean, fBodyAcc_mean_X, fBodyAcc_mean_Y, fBodyAcc_mean_Z, fBodyAccJerk_mean_X, fBodyAccJerk_mean_Y, fBodyAccJerk_mean_Z, fBodyGyro_mean_X, fBodyGyro_mean_Y, fBodyGyro_mean_Z, fBodyAccMag_mean, fBodyBodyAccJerkMag_mean, fBodyBodyGyroMag_mean, fBodyBodyGyroJerkMag_mean, tBodyAcc_std_X, tBodyAcc_std_Y, tBodyAcc_std_Z, tGravityAcc_std_X, tGravityAcc_std_Y, tGravityAcc_std_Z, tBodyAccJerk_std_X, tBodyAccJerk_std_Y, tBodyAccJerk_std_Z, tBodyGyro_std_X, tBodyGyro_std_Y, tBodyGyro_std_Z, tBodyGyroJerk_std_X, tBodyGyroJerk_std_Y, tBodyGyroJerk_std_Z, tBodyAccMag_std, tGravityAccMag_std, tBodyAccJerkMag_std, tBodyGyroMag_std, tBodyGyroJerkMag_std, fBodyAcc_std_X, fBodyAcc_std_Y, fBodyAcc_std_Z, fBodyAccJerk_std_X, fBodyAccJerk_std_Y, fBodyAccJerk_std_Z, fBodyGyro_std_X, fBodyGyro_std_Y, fBodyGyro_std_Z, fBodyAccMag_std, fBodyBodyAccJerkMag_std, fBodyBodyGyroMag_std, fBodyBodyGyroJerkMag_std  
+ - Unit of measurement (if no unit of measurement list this as well)  
+ - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+
+###average_value
+Identification of the subject.
+
+Some information on the variable including:  
+ - Class of the variable:  
+  character  
+ - Unique values/levels of the variable:  
+    
+ - Unit of measurement (if no unit of measurement list this as well)  
+ - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
 
 ##Sources
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
