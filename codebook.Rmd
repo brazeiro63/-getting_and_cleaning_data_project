@@ -87,14 +87,14 @@ General description of the file including:
 - Variables present in the dataset  
   `r names(f)`
  
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
 
 ###`r names(f)[1]`
 Identification of the subject.
 
 Some information on the variable including:  
  - Class of the variable:  
-  `r class(names(f)[1])`  
+  integer  
+    
  - Unique values/levels of the variable:  
   `r as.vector(unique(f$subject_id))`  
 
@@ -104,7 +104,8 @@ List of activities performed by the subjects during the experiment.
 
 Some information on the variable including:  
  - Class of the variable:  
-  `r class(names(f)[2])`  
+    character  
+    
  - Unique values/levels of the variable:  
   `r as.vector(unique(f$activity_name))`  
 
@@ -112,7 +113,8 @@ Some information on the variable including:
 list of types of measurements made .
 
  - Class of the variable:  
-  `r class(names(f)[3])`  
+  character  
+  
  - Unique values/levels of the variable:  
   `r as.vector(unique(f$measure_domain))`  
 
@@ -121,7 +123,8 @@ Averages of the measurtements made by subject, activity and measurement domain.
 
 Some information on the variable including:  
  - Class of the variable:  
-  `r class(names(f)[4])`  
+    numeric  
+    
  - Unit of measurement (if no unit of measurement list this as well)  
   The measurements were normalized to values between -1 and 1.
 
